@@ -14,6 +14,14 @@ cask "worktreemanager" do
 
   app "WorktreeManager.app"
 
+  # The app isn't notarized yet, so strip the download quarantine Homebrew adds
+  # by default — otherwise Gatekeeper blocks the unsigned (ad-hoc) app on first
+  # launch. Remove this block once the app is signed + notarized.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/WorktreeManager.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/com.worktreemanager.dev",
     "~/Library/Caches/com.worktreemanager.dev",
