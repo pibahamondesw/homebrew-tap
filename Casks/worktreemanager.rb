@@ -1,6 +1,6 @@
 cask "worktreemanager" do
-  version "0.3.0"
-  sha256 "264ae5efac5b63052094752aa5b762c9b7e7077ec8b2b3763720873410f23879"
+  version "0.3.1"
+  sha256 "b68e568435c3149c5ee8e4737b5741d4b0f720c0f4c88fab3d5ce3cff910d9e4"
 
   url "https://github.com/pibahamondesw/WorktreeManager/releases/download/v#{version}/WorktreeManager_universal.app.tar.gz"
   name "WorktreeManager"
