@@ -1,6 +1,6 @@
 cask "worktreemanager" do
-  version "0.6.1"
-  sha256 "6c59ea51ea21a1a335151afb77efcae2ca6f8e9d59ab5f7ac7c4aae4acff010b"
+  version "0.7.0"
+  sha256 "41504714520fc132f5856067ce6881a309c39ec2a79425d46dce125373b03b9e"
 
   url "https://github.com/pibahamondesw/WorktreeManager/releases/download/v#{version}/WorktreeManager_universal.app.tar.gz"
   name "WorktreeManager"
@@ -13,6 +13,7 @@ cask "worktreemanager" do
   depends_on macos: :catalina
 
   app "WorktreeManager.app"
+  binary "#{appdir}/WorktreeManager.app/Contents/MacOS/worktree-manager", target: "wtm"
 
   # The app isn't notarized yet, so strip the download quarantine Homebrew adds
   # by default — otherwise Gatekeeper blocks the unsigned (ad-hoc) app on first
